@@ -7,6 +7,10 @@ const venture = sequelize.define('list_venture', {
         primaryKey: true,
         autoIncrement: true
     },
+    smallbanner_id: {
+        type: DataTypes.INET,
+        allowNull: false
+    },
     image: {
         type: DataTypes.STRING,
         allowNull: false

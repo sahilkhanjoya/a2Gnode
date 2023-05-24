@@ -1,3 +1,4 @@
+import smallbanner from "../model/smallbanner.model.js";
 import venture from "../model/ventures.model.js";
 
 export const venturecreate = async (req, res) => {
@@ -7,12 +8,13 @@ export const venturecreate = async (req, res) => {
         res.status(200).send({ status: true, data: ventuers });
 
     } catch (error) {
+        console.log(error);
         res.status(500).send({ error: "Internal server error" });
     }
 };
 export const getventure = async (req, res) => {
     try {
-        const get = await venture.findAll()
+        const get = await venture.findAll({ include: smallbanner })
         if (get) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {
@@ -55,3 +57,17 @@ export const updateventure = async (req, res) => {
         res.status(500).send({ error: "Internal server error" });
     }
 };
+// export const ventureimagejoin = async (req, res) => {
+//     try {
+//         const result = await venture.findAll({
+//             where: {
+//                 smallbanner_id: req.body.smallbanner_id
+//             },
+//             include: smallbanner
+//         });
+//         res.status(200).send({ status: true, msg: "venture image join successfully", data: result });
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).send({ error: 'Internal server error' });
+//     }
+// };

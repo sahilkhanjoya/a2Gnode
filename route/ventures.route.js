@@ -8,6 +8,7 @@ const venrouter = Express.Router();
 venrouter.route("/ventuers/create").post(imageUploads.single('image'), venturecreate);
 venrouter.route('/venture/get').get(getventure)
 venrouter.route('/venture/delete').delete(deleteventure)
+// venrouter.route('/venture/image').get(ventureimagejoin)
 venrouter.route("/ventuers/update").put(imageUploads.single('image'), updateventure);
 
 export default venrouter
