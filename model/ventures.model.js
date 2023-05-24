@@ -8,7 +8,7 @@ const venture = sequelize.define('list_venture', {
         autoIncrement: true
     },
     smallbanner_id: {
-        type: DataTypes.INET,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     image: {

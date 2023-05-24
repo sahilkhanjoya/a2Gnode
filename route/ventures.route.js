@@ -1,5 +1,4 @@
 import Express from "express";
-import router from "express-promise-router";
 import { imageUploads } from "../service/image.js";
 import { deleteventure, getventure, updateventure, venturecreate } from "../controller/ventures.con.js";
 
