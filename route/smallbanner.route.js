@@ -5,10 +5,10 @@ import { createsmall, getsmall, smalldelete, smallupdate } from "../controller/s
 
 
 const smallroute = Express.Router();
-smallroute.route("/small/banner/create").post(imageUploads.single('small banner'), createsmall);
+smallroute.route("/small/banner/create").post(imageUploads.single('small_banner'), createsmall);
 smallroute.route("/get/small/banner").get(getsmall)
 smallroute.route("/delete/small/banner").delete(smalldelete)
-smallroute.route("/update/small/banner").put(imageUploads.single('small banner'),smallupdate)
+smallroute.route("/update/small/banner").put(imageUploads.single('small_banner'),smallupdate)
 
 
 export default smallroute

@@ -9,7 +9,7 @@ const journey = sequelize.define('journey', {
     },
     value: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false                                   
     }
 }, {
     tableName: 'journey',

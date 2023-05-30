@@ -13,7 +13,7 @@ export const createbanner = async (req, res) => {
 export const getbanner = async(req,res)=>{
     try {
         const get = await banner.findAll()
-        if(get){
+        if(get.length > 0){
             res.status(200).send({ status: true, msg:"data get succesfully",data: get });
         }else{
             res.status(404).send({ status: false, msg:"id not found",data: {} });

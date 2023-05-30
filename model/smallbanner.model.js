@@ -3,7 +3,7 @@ import sequelize from '../mysqlDB/DB.js';
 import brand from './ourbrand.model.js';
 import venture from './ventures.model.js';
 
-const smallbanner = sequelize.define('small banner', {
+const smallbanner = sequelize.define('small_banner', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -14,7 +14,7 @@ const smallbanner = sequelize.define('small banner', {
         allowNull: false
     }
 }, {
-    tableName: 'small banner',
+    tableName: 'small_banner',
     timestamps: true
 });
 

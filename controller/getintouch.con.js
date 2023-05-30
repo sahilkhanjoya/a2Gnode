@@ -12,7 +12,7 @@ export const touchcreate = async (req, res) => {
 export const gettouch = async (req, res) => {
     try {
         const get = await touch.findOne({ where: { id: req.body.id } })
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data successfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });

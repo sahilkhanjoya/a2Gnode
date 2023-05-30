@@ -15,7 +15,7 @@ export const venturecreate = async (req, res) => {
 export const getventure = async (req, res) => {
     try {
         const get = await venture.findAll({ include: smallbanner })
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });

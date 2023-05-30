@@ -12,7 +12,7 @@ export const brandcreate = async (req, res) => {
 export const getourbrand = async (req, res) => {
     try {
         const get = await brand.findOne({ where: { id: req.body.id } })
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get our brand successfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });

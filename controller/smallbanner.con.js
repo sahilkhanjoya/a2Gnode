@@ -12,7 +12,7 @@ export const createsmall = async (req, res) => {
 export const getsmall = async (req, res) => {
     try {
         const get = await smallbanner.findAll()
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
@@ -30,6 +30,7 @@ export const smalldelete = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
+        console.log(error);
         res.status(500).send({ error: "Internal server error" });
     }
 };

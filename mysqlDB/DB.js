@@ -5,7 +5,7 @@ const sequelize = new Sequelize("defaultdb", "doadmin", "AVNS_XYWUqEVuyU_6iXKVAk
   dialect: "mysql",
   port: 25060,
   sslmode : "REQUIRED",
- logging:false,
+  logging:false,
   // dialectOptions: {
   //   connectTimeout: 30000, // 30 seconds
   // },

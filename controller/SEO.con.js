@@ -12,7 +12,7 @@ export const seocreate = async (req, res) => {
 export const seoget = async (req, res) => {
     try {
         const get = await SEO.findAll()
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "data get successfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });

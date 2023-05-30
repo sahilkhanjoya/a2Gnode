@@ -13,7 +13,7 @@ export const peoplecreate = async (req, res) => {
 export const getpeople = async (req, res) => {
     try {
         const get = await people.findAll()
-        if (get) {
+        if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data our people succesfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });

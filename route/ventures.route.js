@@ -1,6 +1,6 @@
 import Express from "express";
 import { imageUploads } from "../service/image.js";
-import { deleteventure, getventure, updateventure, venturecreate } from "../controller/ventures.con.js";
+ import { deleteventure, getventure ,updateventure, venturecreate } from "../controller/ventures.con.js";
 
 
 const venrouter = Express.Router();
