@@ -20,7 +20,7 @@ const venture = sequelize.define('list_venture', {
         allowNull: false
     },
     discription: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     website_link: {

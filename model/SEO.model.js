@@ -16,7 +16,7 @@ const SEO = sequelize.define('SEO Executive', {
         allowNull: false
     },
     Location: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     Experience: {
@@ -24,7 +24,7 @@ const SEO = sequelize.define('SEO Executive', {
         allowNull: false
     },
     Skill: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     Salary: {
@@ -36,19 +36,19 @@ const SEO = sequelize.define('SEO Executive', {
         allowNull: false
     },
     job_title: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     job_Description: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     Responsibilities:{
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     Required_skills:{
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
     

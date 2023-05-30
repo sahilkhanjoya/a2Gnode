@@ -1,4 +1,5 @@
 import Express from "express";
+import cors from "cors"
 import bannerroute from "./route/banner.route.js";
 import venrouter from "./route/ventures.route.js";
 import meanroute from "./route/meanbanner.route.js";
@@ -16,6 +17,7 @@ import HRroute from "./route/HRexecutive.route.js";
 
 const app = Express()
 app.use(Express.json())
+app.use(cors())
 app.use(bannerroute)
 app.use(venrouter)
 app.use(meanroute)

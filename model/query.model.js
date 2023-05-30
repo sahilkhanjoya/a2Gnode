@@ -24,7 +24,7 @@ const query = sequelize.define('query', {
         allowNull: false
     },
     message: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
     },
 }, {
