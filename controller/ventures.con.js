@@ -21,6 +21,7 @@ export const getventure = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
+        console.log(error);
         res.status(500).send({ error: "Internal server error" });
     }
 };

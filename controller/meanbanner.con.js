@@ -37,10 +37,27 @@ export const deletedmeanbanner = async (req, res) => {
 export const updatemeanbanner = async (req, res) => {
     try {
         const { id, name, discription, dictionary, mobile_number, email, social_link } = req.body;
-        const { path: imagePath } = req.file;
-        const updatedBanner = await meanbanner.update(
+        if (req.file && req.file.path) {
+            const { path: imagePath } = req.file;
+            const updatedBanner = await meanbanner.update(
+                {
+                    image: imagePath,
+                    name: name,
+                    discription: discription,
+                    dictionary: dictionary,
+                    mobile_number: mobile_number,
+                    email: email,
+                    social_link: social_link
+                }, { where: { id } });
+            if (updatedBanner[0] == 0) {
+                res.status(404).send({ status: false, msg: "id not found", data: {} });
+            } else {
+                res.status(200).send({ status: true, msg: "mean banner updated successfully", data: updatedBanner });
+            }
+            return;
+        }
+        const dataUpdate = await meanbanner.update(
             {
-                image: imagePath,
                 name: name,
                 discription: discription,
                 dictionary: dictionary,
@@ -48,10 +65,10 @@ export const updatemeanbanner = async (req, res) => {
                 email: email,
                 social_link: social_link
             }, { where: { id } });
-        if (updatedBanner[0] == 0) {
+        if (dataUpdate[0] == 0) {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         } else {
-            res.status(200).send({ status: true, msg: "mean banner updated successfully", data: updatedBanner });
+            res.status(200).send({ status: true, msg: "mean banner updated successfully", data: dataUpdate });
         }
     } catch (error) {
         console.log(error);
