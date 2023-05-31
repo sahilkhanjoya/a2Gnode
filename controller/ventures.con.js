@@ -40,6 +40,7 @@ export const deleteventure = async (req, res) => {
 export const updateventure = async (req, res) => {
     try {
         const { id, name, discription, website_link } = req.body;
+        if (req.file && req.file.path) {
         const { path: imagePath } = req.file;
         const updateVenture = await venture.update(
             {
@@ -49,26 +50,25 @@ export const updateventure = async (req, res) => {
                 website_link: website_link
             }, { where: { id } });
         if (updateVenture[0] == 0) {
-            res.status(404).send({ status: false, msg: "id not found", data: {} });
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
         } else {
             res.status(200).send({ status: true, msg: "venture updated successfully", data: updateVenture });
+        }
+        return;
+    }
+        const dataUpdate = await venture.update(
+            {
+                name: name,
+                discription: discription,
+                website_link: website_link
+            }, { where: { id } });
+        if (dataUpdate[0] == 0) {
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
+        } else {
+            res.status(200).send({ status: true, msg: "venture updated successfully", data: dataUpdate });
         }
     } catch (error) {
         console.log(error);
         res.status(500).send({ error: "Internal server error" });
     }
 };
-// export const ventureimagejoin = async (req, res) => {
-//     try {
-//         const result = await venture.findAll({
-//             where: {
-//                 smallbanner_id: req.body.smallbanner_id
-//             },
-//             include: smallbanner
-//         });
-//         res.status(200).send({ status: true, msg: "venture image join successfully", data: result });
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send({ error: 'Internal server error' });
-//     }
-// };

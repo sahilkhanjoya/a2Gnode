@@ -12,7 +12,7 @@ const meanbanner = sequelize.define('mean banner', {
         allowNull: false
     },
     discription: {
-        type: DataTypes.STRING(1000),
+        type: DataTypes.STRING(2000),
         allowNull: false
     },
     name: {
