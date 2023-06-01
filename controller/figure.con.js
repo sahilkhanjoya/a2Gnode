@@ -5,7 +5,7 @@ export const figurecreate = async (req, res) => {
         const fig = await figure.create(req.body)
         res.status(200).send({ status: true, msg: "create location successfully", data: fig });
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+      res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const updatefig = async (req, res) => {
@@ -20,7 +20,7 @@ export const updatefig = async (req, res) => {
       }
     } catch (error) {
         console.log(error);
-      res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
   };
   

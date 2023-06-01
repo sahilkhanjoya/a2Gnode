@@ -6,7 +6,7 @@ export const cityadd = async (req, res) => {
         const create = await city.create(req.body)
         res.status(200).send({ status: true, msg: "city add successfully", data: create });
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const cityget = async (req, res) => {
@@ -18,7 +18,7 @@ export const cityget = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const joinSEO = async (req, res) => {
@@ -32,6 +32,6 @@ export const joinSEO = async (req, res) => {
         res.status(200).send({ status: true, msg: "table are joining successfully", data: result });
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: 'Internal server error' });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };

@@ -9,7 +9,7 @@ export const venturecreate = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const getventure = async (req, res) => {
@@ -22,7 +22,7 @@ export const getventure = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const deleteventure = async (req, res) => {
@@ -34,7 +34,7 @@ export const deleteventure = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const updateventure = async (req, res) => {
@@ -69,6 +69,6 @@ export const updateventure = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };

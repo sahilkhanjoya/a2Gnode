@@ -5,7 +5,7 @@ export const journeycreate = async (req, res) => {
         const jour = await journey.create(req.body)
         res.status(200).send({ status: true, msg: "create journey rable successfully", data: jour });
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const getjourney = async (req, res) => {
@@ -18,7 +18,7 @@ export const getjourney = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const updatejourney = async (req, res) => {
@@ -33,6 +33,6 @@ export const updatejourney = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };

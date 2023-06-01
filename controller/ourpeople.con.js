@@ -7,7 +7,7 @@ export const peoplecreate = async (req, res) => {
         res.status(200).send({ status: true, data: create });
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const getpeople = async (req, res) => {
@@ -19,7 +19,7 @@ export const getpeople = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const updatepeople = async (req, res) => {
@@ -64,6 +64,6 @@ export const deletedpeople = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };

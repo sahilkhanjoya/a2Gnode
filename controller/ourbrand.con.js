@@ -11,13 +11,27 @@ export const brandcreate = async (req, res) => {
 };
 export const getourbrand = async (req, res) => {
     try {
-        const get = await brand.findOne({ where: { id: req.body.id } })
-        if (get.length > 0) {
-            res.status(200).send({ status: true, msg: "get our brand successfully", data: get });
+        const get = await brand.findAll()
+        if (get == 0) {
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
         } else {
-            res.status(404).send({ status: false, msg: "id not found", data: {} });
+            res.status(200).send({ status: true, msg: "get our brand successfully", data: get });
         }
     } catch (error) {
+        console.log(error);
+        res.status(500).send({ error: "Internal server error" });
+    }
+};
+export const IDgetbrand = async (req, res) => {
+    try {
+        const get = await brand.findOne({ where: { id: req.body.id } })
+        if (!get) {
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
+        } else {
+            res.status(200).send({ status: true, msg: "get successfully", data: get });
+        }
+    } catch (error) {
+        console.log(error);
         res.status(500).send({ error: "Internal server error" });
     }
 };
@@ -27,7 +41,7 @@ export const deletedourbrand = async (req, res) => {
         if (deleted) {
             res.status(200).send({ status: true, msg: "deleted our brand succesfully", data: deleted });
         } else {
-            res.status(404).send({ status: false, msg: "id not found", data: {} });
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
         }
     } catch (error) {
         res.status(500).send({ error: "Internal server error" });
@@ -37,7 +51,7 @@ export const updateourbrand = async (req, res) => {
     try {
         const update = await brand.update(req.body, { where: { id: req.body.id }, });
         if (update[0] == 0) {
-            res.status(404).send({ status: false, msg: "id not found", data: {} });
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
         } else {
             res.status(200).send({ status: true, msg: "our brand updated successfully", data: update });
         }

@@ -7,7 +7,7 @@ export const createbanner = async (req, res) => {
         res.status(200).send({ status: true, data: bann });
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 }
 export const getbanner = async(req,res)=>{
@@ -19,7 +19,7 @@ export const getbanner = async(req,res)=>{
             res.status(404).send({ status: false, msg:"id not found",data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 }
 export const bannerdelete = async(req,res)=>{
@@ -31,6 +31,6 @@ export const bannerdelete = async(req,res)=>{
             res.status(404).send({ status: false, msg:"id not found",data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };

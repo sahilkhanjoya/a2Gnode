@@ -6,19 +6,20 @@ export const touchcreate = async (req, res) => {
         res.status(200).send({ status: true, msg: "create get in touch successfully", data: gettouch });
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const gettouch = async (req, res) => {
     try {
-        const get = await touch.findOne({ where: { id: req.body.id } })
+        const get = await touch.findAll()
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data successfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        console.log(error);
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const deletedtouch = async (req, res) => {
@@ -30,7 +31,7 @@ export const deletedtouch = async (req, res) => {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
 export const updatetouch = async (req, res) => {
@@ -45,6 +46,6 @@ export const updatetouch = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ error: "Internal server error" });
+        res.status(500).send({status:false, msg: "Internal server error",data:error });
     }
 };
