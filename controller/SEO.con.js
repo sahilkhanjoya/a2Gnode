@@ -24,7 +24,7 @@ export const seoget = async (req, res) => {
 export const onedataget = async (req, res) => {
     try {
         const  id  = req.params.id
-        const onedata = await seoJobs.findOne(id)
+        const onedata = await seoJobs.findById(id)
         if (onedata) {
             res.status(200).send({ status: true, msg: "data get successfully", data: onedata });
         } else {
