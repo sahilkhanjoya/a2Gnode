@@ -11,6 +11,7 @@ const SEO = new mongoose.Schema ({
     responsibilities:{type:String,required:true},
     requiredskills:{type:String,required:true},
     jobTitle:{type:String,required:true},
+    url:{type:String,required:false},
 }, {
     timestamps: true
 });
