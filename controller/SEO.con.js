@@ -1,8 +1,8 @@
-import SEO from "../model/SEO.model.js";
+import seoJobs from "../model/SEO.model.js";
 
 export const seocreate = async (req, res) => {
     try {
-        const create = await SEO.create(req.body)
+        const create = await seoJobs.create(req.body)
         res.status(200).send({ status: true, msg: "seo executive successfully", data: create });
     } catch (error) {
         console.log(error);
@@ -11,7 +11,7 @@ export const seocreate = async (req, res) => {
 };
 export const seoget = async (req, res) => {
     try {
-        const get = await SEO.findAll()
+        const get = await seoJobs.find()
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "data get successfully", data: get });
         } else {
@@ -24,7 +24,7 @@ export const seoget = async (req, res) => {
 export const onedataget = async (req, res) => {
     try {
         const  id  = req.params.id
-        const onedata = await SEO.findOne({ where: { id} })
+        const onedata = await seoJobs.findOne(id)
         if (onedata) {
             res.status(200).send({ status: true, msg: "data get successfully", data: onedata });
         } else {

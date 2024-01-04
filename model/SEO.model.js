@@ -1,62 +1,18 @@
-import { Sequelize, DataTypes } from 'sequelize';
-import sequelize from '../mysqlDB/DB.js';
+import mongoose from 'mongoose';
 
-const SEO = sequelize.define('SEO Executive', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    city_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    Employee_Type: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    Location: {
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    Experience: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    Skill: {
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    Salary: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    Date_posted: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    job_title: {
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    job_Description: {
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    Responsibilities:{
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    Required_skills:{
-        type: DataTypes.STRING(1000),
-        allowNull: false
-    },
-    
-
+const SEO = new mongoose.Schema ({
+    employeeType:{type:String,required:true},
+    location:{type:String,required:true},
+    skill:{type:String,required:true},
+    experience:{type:String,required:true},
+    salary:{type:String,required:true},
+    datePosted:{type:String,required:true},
+    job_Description:{type:String,required:true},
+    responsibilities:{type:String,required:true},
+    requiredskills:{type:String,required:true},
+    jobTitle:{type:String,required:true},
 }, {
-    tableName: 'SEO Executive',
     timestamps: true
 });
-
-sequelize.sync();
-export default SEO;
+const seoJobs = mongoose.model('Seo_Job',SEO)
+export default seoJobs
