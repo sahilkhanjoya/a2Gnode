@@ -1,9 +1,11 @@
-import HR from "../model/HRexecutive.model.js";
+import applyjob from "../model/HRexecutive.model.js";
 
 export const createHR = async (req, res) => {
     try {
-        req.body.resume = req.file.path;
-        const create = await HR.create(req.body);
+        if (req.file) {
+            req.body.resume = req.file.path;
+        }
+        const create = await applyjob.create(req.body);
         res.status(200).send({ status: true, msg: "craete successfully", data: create });
     } catch (error) {
         res.status(500).send({status:false, msg: "Internal server error",data:error });
@@ -11,7 +13,7 @@ export const createHR = async (req, res) => {
 };
 export const getHR = async (req, res) => {
     try {
-        const get = await HR.findAll()
+        const get = await applyjob.find()
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {

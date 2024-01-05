@@ -1,32 +1,24 @@
-import { Sequelize, DataTypes } from 'sequelize';
-import sequelize from '../mysqlDB/DB.js';
+import mongoose from 'mongoose';
 
-const HR = sequelize.define('HR executive', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
+const HR = new mongoose.Schema({
     name: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type:STRING,
+        required: true
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: String,
+        required: true
     },
     phone_no: {
-        type: DataTypes.BIGINT,
-        allowNull: false
+        type: String,
+        required: true
     },
     resume: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: String,
+        required: true
     }
 }, {
-    tableName: 'HR executive',
     timestamps: true
 });
-
-sequelize.sync();
-export default HR;
+const applyjob = mongoose.model('job_applys',HR)
+export default applyjob
