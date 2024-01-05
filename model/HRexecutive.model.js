@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const HR = new mongoose.Schema({
     name: {
-        type:STRING,
+        type:String,
         required: true
     },
     email: {

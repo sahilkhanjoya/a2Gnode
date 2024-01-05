@@ -14,7 +14,7 @@ import db from "./mysqlDB/DB.js";
 // import queryRoute from "./route/query.route.js";
 // import cityroute from "./route/city.route.js";
 import SEOroute from "./route/SEO.route.js";
-// import HRroute from "./route/HRexecutive.route.js";
+import HRroute from "./route/HRexecutive.route.js";
 
 const app = Express()
 app.use(Express.json())
@@ -33,7 +33,7 @@ db()
 // app.use(queryRoute)
 // app.use(cityroute)
 app.use(SEOroute)
-// app.use(HRroute)
+app.use(HRroute)
 
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
