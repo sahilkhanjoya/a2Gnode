@@ -15,5 +15,5 @@ const SEO = new mongoose.Schema ({
 }, {
     timestamps: true
 });
-const seoJobs = mongoose.model('Seo_Job',SEO)
+const seoJobs = mongoose.model('Job',SEO)
 export default seoJobs

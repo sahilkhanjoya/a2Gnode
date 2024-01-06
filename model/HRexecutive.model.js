@@ -13,6 +13,10 @@ const HR = new mongoose.Schema({
         type: String,
         required: true
     },
+    job_id:{
+        type:mongoose.Schema.Types.ObjectId,ref:'Job',
+        required:true
+    },
     resume: {
         type: String,
         required: true
