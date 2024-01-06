@@ -4,6 +4,6 @@ import { pdfUploads } from "../service/image.js";
 
 const HRroute = Express.Router();
 HRroute.route("/apply/jobs/a2g-hr-executive").post(pdfUploads.single('resume'), createHR)
-HRroute.route('/get/hr/executive').get(getHR)
+HRroute.route('/get/hr/executive/:id').get(getHR)
 
 export default HRroute
