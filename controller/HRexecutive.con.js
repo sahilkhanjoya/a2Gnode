@@ -13,13 +13,13 @@ export const createHR = async (req, res) => {
 };
 export const getHR = async (req, res) => {
     try {
-        const get = await applyjob.find().populate({path:"job_id"})
+        const get = await applyjob.findOne({job_id:req.params.job_id})
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {
             res.status(404).send({ status: false, msg: "id not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({status:false, msg: "Internal server error",data:error });
+        res.status(500).send({status:false, msg:error.message,data:error });
     }
 };
