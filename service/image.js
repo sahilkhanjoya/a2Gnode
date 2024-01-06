@@ -24,11 +24,5 @@ export const pdfUploads = multer({
   storage: pdfStorage,
   limits: {
     fileSize: 10000000 * 1000
-  },
-  fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(pdf)$/)) {
-      return cb(new Error('Please upload a Post'))
-    }
-    cb(undefined, true)
   }
 });

@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "6596623f6fd1b49a04b0ee4f"
+  },
+  "employeeType": "Full",
+  "location": "jaipur",
+  "skill": "Node js",
+  "experience": "min 1 year",
+  "salary": "500000",
+  "datePosted": "24,24,2004",
+  "job_Description": "When we talk about Node.js developer requirements, the main task of this specialist is the development of server-side logic, as well as further actions related to this work. For example, we are talking about integration, data management, and support for the performance of queries that come from the external interface. It is equally important in the work of this professional to ensure the creation and integration of functional elements of the interface.\n\nTo do a good job, an employee of this specialization must have:",
+  "responsibilities": "A Node.js developer is a specialist whose range of activities includes the creation of internal components for various types of IT products. It connects applications to different web services and takes care of the smooth transfer of information between users and the server. Also, such a specialist helps colleagues in their work, using the opportunities provided by Node.js.",
+  "requiredskills": "mongo. nodejs. reactjs. php.",
+  "jobTitle": "node js Developer",
+  "createdAt": {
+    "$date": "2024-01-04T07:46:07.399Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-04T07:46:07.399Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659662476fd1b49a04b0ee52"
+  },
+  "employeeType": "Full",
+  "location": "jaipur",
+  "skill": "node js",
+  "experience": "min 1 year",
+  "salary": "500000",
+  "datePosted": "24,24,2004",
+  "job_Description": "hello",
+  "responsibilities": "kuch bhi",
+  "requiredskills": "mongo",
+  "jobTitle": "node js",
+  "createdAt": {
+    "$date": "2024-01-04T07:46:15.362Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-04T07:46:15.362Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659662486fd1b49a04b0ee54"
+  },
+  "employeeType": "Full",
+  "location": "jaipur",
+  "skill": "js",
+  "experience": "min 1 year",
+  "salary": "3000",
+  "datePosted": "24,24,2004",
+  "job_Description": "A job description is a written explanation that outlines the essential responsibilities and requirements for a vacant position. Job descriptions should be thorough, clear, and concise and include:",
+  "responsibilities": "kuch bhi. kai h thare",
+  "requiredskills": "mongo",
+  "jobTitle": "node js",
+  "createdAt": {
+    "$date": "2024-01-04T07:46:16.595Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-04T07:46:16.595Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659662496fd1b49a04b0ee56"
+  },
+  "employeeType": "Full",
+  "location": "ajmer",
+  "skill": "node js",
+  "experience": "min 1 year",
+  "salary": "500000",
+  "datePosted": "24,24,2004",
+  "job_Description": "hello",
+  "responsibilities": "kuch bhi",
+  "requiredskills": "mongo",
+  "jobTitle": "php",
+  "createdAt": {
+    "$date": "2024-01-04T07:46:17.672Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-04T07:46:17.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65967d78e3a24051a319851e"
+  },
+  "employeeType": "Full",
+  "location": "jaipur",
+  "skill": "node js",
+  "experience": "min 1 year",
+  "salary": "500000",
+  "datePosted": "24,24,2004",
+  "job_Description": "hello",
+  "responsibilities": "kuch bhi",
+  "requiredskills": "mongo",
+  "jobTitle": "jAVA",
+  "createdAt": {
+    "$date": "2024-01-04T09:42:16.294Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-04T09:42:16.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6597af80abf3e0327cac25a4"
+  },
+  "employeeType": "full time",
+  "location": "jaipur",
+  "skill": "python , php , node, django",
+  "experience": "1 years",
+  "salary": "20000",
+  "datePosted": "12,12,2003",
+  "job_Description": "hi dear ",
+  "responsibilities": "good workin",
+  "requiredskills": "php,python",
+  "jobTitle": "python",
+  "createdAt": {
+    "$date": "2024-01-05T07:28:00.710Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-05T07:28:00.710Z"
+  },
+  "__v": 0
+}]
