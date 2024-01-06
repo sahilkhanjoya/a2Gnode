@@ -13,7 +13,7 @@ export const createHR = async (req, res) => {
 };
 export const getHR = async (req, res) => {
     try {
-        const get = await applyjob.find()
+        const get = await applyjob.find().populate({path:"job_id"})
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "get data succesfully", data: get });
         } else {
