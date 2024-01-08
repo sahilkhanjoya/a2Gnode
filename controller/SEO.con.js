@@ -51,10 +51,10 @@ export const seodelete = async (req, res) => {
 export const updatejobs = async (req, res) => {
     try {
         const updateNew = await seoJobs.findByIdAndUpdate({ _id: req.params.id },req.body,{new:true})
-        if (updateNew) {
-            return res.status(200).send({ status: true, msg: "data update successfully", data: updateNew });
+        if (updateNew == 0) {
+            res.status(404).send({ status: false, msg: "data not found", data: {} });
         }
-        res.status(404).send({ status: false, msg: "data not found", data: {} });
+        return res.status(200).send({ status: true, msg: "data update successfully", data: updateNew });
 
     } catch (error) {
         console.log(error);
