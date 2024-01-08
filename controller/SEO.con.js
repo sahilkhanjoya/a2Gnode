@@ -6,7 +6,7 @@ export const seocreate = async (req, res) => {
         res.status(200).send({ status: true, msg: "seo executive successfully", data: create });
     } catch (error) {
         console.log(error);
-        res.status(500).send({status:false, msg: "Internal server error",data:error });
+        res.status(500).send({ status: false, msg: "Internal server error", data: error });
     }
 };
 export const seoget = async (req, res) => {
@@ -18,12 +18,12 @@ export const seoget = async (req, res) => {
             res.status(404).send({ status: false, msg: "data not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({status:false, msg: "Internal server error",data:error });
+        res.status(500).send({ status: false, msg: "Internal server error", data: error });
     }
 };
 export const onedataget = async (req, res) => {
     try {
-        const  id  = req.params.id
+        const id = req.params.id
         const onedata = await seoJobs.findById(id)
         if (onedata) {
             res.status(200).send({ status: true, msg: "data get successfully", data: onedata });
@@ -32,6 +32,19 @@ export const onedataget = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({status:false, msg: "Internal server error",data:error });
+        res.status(500).send({ status: false, msg: "Internal server error", data: error });
+    }
+};
+export const seodelete = async (req, res) => {
+    try {
+        const deleteseo = await seoJobs.findByIdAndDelete({ _id: req.body.id }, { new: true })
+        if (deleteseo > 0) {
+            return res.status(200).send({ status: true, msg: "data delete successfully", data: deleteseo });
+        }
+        res.status(404).send({ status: false, msg: "data not found", data: {} });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ status: false, msg: "Internal server error", data: error });
     }
 };
