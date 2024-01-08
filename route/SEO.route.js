@@ -5,6 +5,6 @@ const SEOroute = Express.Router();
 SEOroute.route('/create/seo').post(seocreate)
 SEOroute.route('/get/seo').get(seoget)
 SEOroute.route('/onedata/get/seo/:id').get(onedataget)
-SEOroute.route('/delete/seo').delete(seodelete)
+SEOroute.route('/delete/seo/:id').delete(seodelete)
 
 export default SEOroute;

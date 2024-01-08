@@ -37,8 +37,8 @@ export const onedataget = async (req, res) => {
 };
 export const seodelete = async (req, res) => {
     try {
-        const deleteseo = await seoJobs.findByIdAndDelete({ _id: req.body.id }, { new: true })
-        if (deleteseo > 0) {
+        const deleteseo = await seoJobs.findByIdAndDelete({ _id: req.params.id })
+        if (deleteseo) {
             return res.status(200).send({ status: true, msg: "data delete successfully", data: deleteseo });
         }
         res.status(404).send({ status: false, msg: "data not found", data: {} });
