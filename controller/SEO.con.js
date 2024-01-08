@@ -6,7 +6,7 @@ export const seocreate = async (req, res) => {
         res.status(200).send({ status: true, msg: "seo executive successfully", data: create });
     } catch (error) {
         console.log(error);
-        res.status(500).send({ status: false, msg: "Internal server error", data: error });
+        res.status(500).send({ status: false, msg:error.message, data: error });
     }
 };
 export const seoget = async (req, res) => {
@@ -18,7 +18,7 @@ export const seoget = async (req, res) => {
             res.status(404).send({ status: false, msg: "data not found", data: {} });
         }
     } catch (error) {
-        res.status(500).send({ status: false, msg: "Internal server error", data: error });
+        res.status(500).send({ status: false, msg:error.message, data: error });
     }
 };
 export const onedataget = async (req, res) => {
@@ -32,7 +32,7 @@ export const onedataget = async (req, res) => {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).send({ status: false, msg: "Internal server error", data: error });
+        res.status(500).send({ status: false, msg:error.message, data: error });
     }
 };
 export const seodelete = async (req, res) => {
@@ -45,6 +45,19 @@ export const seodelete = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).send({ status: false, msg: "Internal server error", data: error });
+        res.status(500).send({ status: false, msg:error.message, data: error });
+    }
+};
+export const updatejobs = async (req, res) => {
+    try {
+        const updateNew = await seoJobs.findByIdAndUpdate({ _id: req.params.id },req.body,{new:true})
+        if (updateNew) {
+            return res.status(200).send({ status: true, msg: "data update successfully", data: updateNew });
+        }
+        res.status(404).send({ status: false, msg: "data not found", data: {} });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ status: false, msg:error.message, data: error });
     }
 };
