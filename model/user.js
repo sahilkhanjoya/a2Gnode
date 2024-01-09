@@ -5,7 +5,7 @@ const users = new mongoose.Schema ({
     email:{type:String,required:true},
     password:{type:String,required:true},
     role:{type:String,default:'User'},
-    token:{type:String,required:true},
+    token:{type:String,required:false},
     status:{type:Boolean,default:true}
 }, {
     timestamps: true

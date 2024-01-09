@@ -1,6 +1,7 @@
 import Express from "express";
 import cors from "cors"
 import db from "./mysqlDB/DB.js";
+import cookieParser from "cookie-parser";
 // import bannerroute from "./route/banner.route.js";
 // import venrouter from "./route/ventures.route.js";
 // import meanroute from "./route/meanbanner.route.js";
@@ -15,11 +16,13 @@ import db from "./mysqlDB/DB.js";
 // import cityroute from "./route/city.route.js";
 import SEOroute from "./route/SEO.route.js";
 import HRroute from "./route/HRexecutive.route.js";
+import userRouter from "./route/user.js";
 
 const app = Express()
 app.use(Express.json())
 app.use(cors())
 db()
+app.use(cookieParser())
 // app.use(bannerroute)
 // app.use(venrouter)
 // app.use(meanroute)
@@ -34,6 +37,7 @@ db()
 // app.use(cityroute)
 app.use(SEOroute)
 app.use(HRroute)
+app.use(userRouter)
 
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
