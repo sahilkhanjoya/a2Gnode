@@ -17,6 +17,7 @@ import cookieParser from "cookie-parser";
 import SEOroute from "./route/SEO.route.js";
 import HRroute from "./route/HRexecutive.route.js";
 import userRouter from "./route/user.js";
+import tagRouter from "./route/seo.tags.js";
 
 const app = Express()
 app.use(Express.json())
@@ -38,6 +39,7 @@ app.use(cookieParser())
 app.use(SEOroute)
 app.use(HRroute)
 app.use(userRouter)
+app.use(tagRouter)
 
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
