@@ -11,7 +11,7 @@ export const seocreate = async (req, res) => {
 };
 export const seoget = async (req, res) => {
     try {
-        const get = await seoJobs.find({seo:false})
+        const get = await seoJobs.find().sort({_id:-1})
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "data get successfully", data: get });
         } else {
@@ -61,3 +61,10 @@ export const updatejobs = async (req, res) => {
         res.status(500).send({ status: false, msg:error.message, data: error });
     }
 };
+export const AllFindJobBySeo = async function(req,res) {
+    const finds = await seoJobs.find({seo:false}).sort({_id:-1})
+    if (!finds) {
+        res.status(404).send({ status: false, msg: "data not found", data: {} });
+    }
+    return res.status(200).send({ status: true, msg: "data find successfully", data: finds });
+}

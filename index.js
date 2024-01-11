@@ -43,7 +43,10 @@ app.use(tagRouter)
 
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
-
+app.use((error, req, res, next) => {
+    console.error(error.stack);
+    res.status(500).send({ status: false, message: error.message, data: error })
+});
 app.listen(8080, () => {
     console.log("=======");
 });
