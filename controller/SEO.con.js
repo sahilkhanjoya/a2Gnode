@@ -65,6 +65,7 @@ export const AllFindJobBySeo = async function(req,res) {
     const finds = await seoJobs.find({seo:false}).sort({_id:-1})
     if (!finds) {
         res.status(404).send({ status: false, msg: "data not found", data: {} });
+        return
     }
-    return res.status(200).send({ status: true, msg: "data find successfully", data: finds });
+     res.status(200).send({ status: true, msg: "data find successfully", data: finds });
 }
