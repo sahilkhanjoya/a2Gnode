@@ -38,6 +38,7 @@ class seo {
         if (!deleteWithId) {
             return res.status(404).send({ status: false, message: 'data not found', data: null })
         }
+        await seoJobs.findByIdAndUpdate({ _id: deleteWithId.value.jobId },{$set:{seo:false}})
         res.send({ status: true, message: 'seo delete successfully', data: deleteWithId })
     }
 }
