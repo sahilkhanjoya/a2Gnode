@@ -1,6 +1,6 @@
 import express from 'express';
 import seotag from '../controller/seo.tags.js';
-const tagRouter = express()
+const tagRouter = express.Router()
 
 tagRouter.post('/seo/tag', seotag.seoTagCreate)
 tagRouter.get('/seo/gets/:id', seotag.seoGet)

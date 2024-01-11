@@ -27,6 +27,7 @@ class seo {
     }
     async seoAllGets(req, res) {
         const findData = await SeoTag.find({}).populate("jobId").sort({ _id: -1 })
+        console.log(findData);
         if (findData.length == 0) {
             return res.status(404).send({ status: false, message: 'data not found', data: null })
         }
