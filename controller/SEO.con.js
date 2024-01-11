@@ -11,7 +11,7 @@ export const seocreate = async (req, res) => {
 };
 export const seoget = async (req, res) => {
     try {
-        const get = await seoJobs.find()
+        const get = await seoJobs.find({seo:false})
         if (get.length > 0) {
             res.status(200).send({ status: true, msg: "data get successfully", data: get });
         } else {

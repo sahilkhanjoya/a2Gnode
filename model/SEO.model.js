@@ -12,6 +12,7 @@ const SEO = new mongoose.Schema ({
     requiredskills:{type:String,required:true},
     jobTitle:{type:String,required:true},
     url:{type:String,required:false},
+    seo:{type:Boolean,default:false}
 }, {
     timestamps: true
 });
