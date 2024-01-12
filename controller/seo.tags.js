@@ -41,6 +41,12 @@ class seo {
         await seoJobs.findByIdAndUpdate({ _id: deleteWithId.value.jobId },{$set:{seo:false}})
         res.send({ status: true, message: 'seo delete successfully', data: deleteWithId })
     }
+    async seoGetwithWeb(req, res) {
+        SeoTag.findById({ jobId: req.params.id }).then((data) => {
+            if (!data) return res.status(404).send({ status: false, message: "data not found", data: null })
+            res.send({ status: true, message: 'tag gets', data: data })
+        }).catch(error => res.status(400).send({ status: false, message: error.message, data: error }))
+    }
 }
 const seotag = new seo()
 export default seotag
