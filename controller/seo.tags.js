@@ -39,7 +39,7 @@ class seo {
             return res.status(404).send({ status: false, message: 'data not found', data: null })
         }
         await seoJobs.findByIdAndUpdate({ _id: deleteWithId.value.jobId },{$set:{seo:false}})
-        res.send({ status: true, message: 'seo delete successfully', data: deleteWithId })
+        res.send({ status: true, message: 'seo delete successfully.', data: deleteWithId })
     }
     async seoGetwithWeb(req, res) {
         SeoTag.findOne({ jobId: req.params.id }).then((data) => {
