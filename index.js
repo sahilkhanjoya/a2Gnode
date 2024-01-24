@@ -18,11 +18,15 @@ import SEOroute from "./route/SEO.route.js";
 import HRroute from "./route/HRexecutive.route.js";
 import userRouter from "./route/user.js";
 import tagRouter from "./route/seo.tags.js";
+import sitemapRouter from "./route/sitemap.js";
+import { generateSitemap } from "./sitemap-genrat.js";
+import fs from "fs";
 
 const app = Express()
 app.use(Express.json())
 app.use(cors())
 db()
+// generateSitemap()
 app.use(cookieParser())
 // app.use(bannerroute)
 // app.use(venrouter)
@@ -40,7 +44,13 @@ app.use(SEOroute)
 app.use(HRroute)
 app.use(userRouter)
 app.use(tagRouter)
+app.use(sitemapRouter)
 
+app.get('/sitemap.xml', (req, res) => {
+  const sitemapContent = fs.readFileSync('./public/sitemap.xml', 'utf-8');
+  res.type('application/xml').send(sitemapContent);
+});
+app.use( Express.static('public'))
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
 app.use((error, req, res, next) => {
