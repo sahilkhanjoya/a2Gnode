@@ -26,15 +26,7 @@
     "path": "^0.12.7",
     "pm2": "^5.3.0",
     "sequelize": "^6.31.1",
-<<<<<<< HEAD
     "sqlite3": "^5.1.6",
     "xmlbuilder2": "^3.1.1"
-=======
-    "sqlite3": "^5.1.6"
-  },
-  "devDependencies": {
-    "fs": "^0.0.1-security",
-    "sitemap": "^2.2.0"
->>>>>>> 7e4eb6c11f2d82f0f3b5e096fa29b85bd5f3b77a
   }
 }

@@ -18,14 +18,10 @@ import SEOroute from "./route/SEO.route.js";
 import HRroute from "./route/HRexecutive.route.js";
 import userRouter from "./route/user.js";
 import tagRouter from "./route/seo.tags.js";
-<<<<<<< HEAD
 import sitemapRouter from "./route/sitemap.js";
-import { generateSitemap } from "./sitemap-genrat.js";
 import fs from "fs";
-=======
 import generateSitemap from "./sitemap.js";
 import ContactRouter from "./route/contact.js";
->>>>>>> 7e4eb6c11f2d82f0f3b5e096fa29b85bd5f3b77a
 
 const app = Express()
 app.use(Express.json())
@@ -49,7 +45,6 @@ app.use(SEOroute)
 app.use(HRroute)
 app.use(userRouter)
 app.use(tagRouter)
-<<<<<<< HEAD
 app.use(sitemapRouter)
 
 app.get('/sitemap.xml', (req, res) => {
@@ -57,9 +52,7 @@ app.get('/sitemap.xml', (req, res) => {
   res.type('application/xml').send(sitemapContent);
 });
 app.use( Express.static('public'))
-=======
 app.use(ContactRouter)
->>>>>>> 7e4eb6c11f2d82f0f3b5e096fa29b85bd5f3b77a
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
 app.use((error, req, res, next) => {
