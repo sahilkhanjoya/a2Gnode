@@ -20,7 +20,7 @@ import userRouter from "./route/user.js";
 import tagRouter from "./route/seo.tags.js";
 import sitemapRouter from "./route/sitemap.js";
 import fs from "fs";
-import generateSitemap from "./sitemap.js";
+// import generateSitemap from "./sitemap.js";
 import ContactRouter from "./route/contact.js";
 
 const app = Express()
@@ -59,7 +59,7 @@ app.use((error, req, res, next) => {
     console.error(error.stack);
     res.status(500).send({ status: false, message: error.message, data: error })
 });
-generateSitemap()
+// generateSitemap()
 app.listen(8080, () => {
     console.log("=======");
 });
