@@ -14,7 +14,7 @@
 import mongoose from "mongoose";
 
 const db = async()=>{
-  mongoose.connect('mongodb+srv://sahiljoya11:sahil1122@cluster0.syubkoh.mongodb.net/A2Groups').then(()=>{
+  mongoose.connect('mongodb+srv://sahiljoya11:sahil1122@cluster0.syubkoh.mongodb.net/A21').then(()=>{
     console.log("database connected.");
   }).catch((err)=>console.log(err.message))
 }

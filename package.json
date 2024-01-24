@@ -25,5 +25,9 @@
     "pm2": "^5.3.0",
     "sequelize": "^6.31.1",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "sitemap": "^2.2.0"
   }
 }

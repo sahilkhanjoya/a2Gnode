@@ -3,7 +3,17 @@ import SeoTag from "../model/seo.tags.js";
 
 export const seocreate = async (req, res) => {
     try {
-        const create = await seoJobs.create(req.body)
+        const {requiredskills,job_Description, responsibilities, ...restOfData } = req.body;
+        const responsibilitiesArray = responsibilities.split('\n').filter(Boolean);
+        const reqSkill = requiredskills.split('\n').filter(Boolean);
+        const des = job_Description.split('\n').filter(Boolean);
+        const create = await seoJobs.create({
+            ...restOfData,
+            responsibilities: responsibilitiesArray,
+            requiredskills:reqSkill,
+            job_Description:des
+
+        });
         res.status(200).send({ status: true, msg: "seo executive successfully", data: create });
     } catch (error) {
         console.log(error);
