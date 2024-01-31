@@ -20,8 +20,9 @@ import userRouter from "./route/user.js";
 import tagRouter from "./route/seo.tags.js";
 import sitemapRouter from "./route/sitemap.js";
 import fs from "fs";
-// import generateSitemap from "./sitemap.js";
 import ContactRouter from "./route/contact.js";
+import path, { dirname } from "path";
+import { fileURLToPath } from 'url';
 
 const app = Express()
 app.use(Express.json())
@@ -51,8 +52,18 @@ app.get('/sitemap.xml', (req, res) => {
   const sitemapContent = fs.readFileSync('./public/sitemap.xml', 'utf-8');
   res.type('application/xml').send(sitemapContent);
 });
-app.use( Express.static('public'))
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.use(Express.static(path.join(__dirname, 'public')));
+app.get('/',(req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 app.use(ContactRouter)
+app.use( Express.static('public'))
 app.use('/image', Express.static('image'))
 app.use('/pdf', Express.static('pdf'))
 app.use((error, req, res, next) => {
@@ -60,6 +71,7 @@ app.use((error, req, res, next) => {
     res.status(500).send({ status: false, message: error.message, data: error })
 });
 // generateSitemap()
-app.listen(8080, () => {
-    console.log("=======");
+const PORT = 8080
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
 });

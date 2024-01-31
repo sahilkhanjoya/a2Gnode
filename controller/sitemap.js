@@ -10,7 +10,7 @@ class sitemapController {
         const checkSiteMapUrl = await sitemapModel.findOne({url:req.body.url})
         if(checkSiteMapUrl) return res.send({status:409,message:'sitemap url already use.',data:null})
         const createNewUrl = await sitemapModel.create(req.body)
-        const axiosData = await axios.get('http://localhost:8080/siteMap/get-all-Url')
+        const axiosData = await axios.get('https://oyster-app-hkcep.ondigitalocean.app/siteMap/get-all-Url')
         const xml = create({
             version: '1.0',
             encoding: 'UTF-8',

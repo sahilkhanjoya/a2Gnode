@@ -2,55 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://a2groups.org/</loc>
-    <lastmod>2024-01-22T11:17:14.355Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.493Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://a2groups.org/gallery</loc>
-    <lastmod>2024-01-22T11:17:14.358Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.499Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://a2groups.org/media</loc>
-    <lastmod>2024-01-22T11:17:14.359Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.500Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>`https:a2groups.org/contactus</loc>
-    <lastmod>2024-01-22T11:17:14.359Z</lastmod>
+    <loc>https://a2groups.org/contactus</loc>
+    <lastmod>2024-01-29T05:41:18.501Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://a2groups.org/successstories</loc>
-    <lastmod>2024-01-22T11:17:14.360Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.502Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://a2groups.org/career</loc>
-    <lastmod>2024-01-22T11:17:14.361Z</lastmod>
-    <changefreq>daily</changefreq> 
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://a2groups.org/careerdetails/Next.JsandReact.Js/Jaipur</loc>
-    <lastmod>2024-01-22T11:17:14.361Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.502Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://a2groups.org/careerdetails/BusinessDevelopmentExecutive(Bde)/Jaipur,Rajasthan302002</loc>
-    <lastmod>2024-01-22T11:17:14.362Z</lastmod>
+    <loc>https://a2groups.org/careerdetails/Next.JsandReact.Js/Jaipur</loc>
+    <lastmod>2024-01-29T05:41:18.503Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://a2groups.org/careerdetails/BusinessDevelopmentExecutive/Jaipur</loc>
-    <lastmod>2024-01-22T11:17:14.362Z</lastmod>
+    <lastmod>2024-01-29T05:41:18.504Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://a2groups.org/careerdetails/BusinessDevelopmentExecutive(Bde)/Jaipur,Rajasthan302002</loc>
+    <lastmod>2024-01-29T05:41:18.504Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://a2groups.org/aboutus</loc>
+    <lastmod>2024-01-29T05:41:18.505Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

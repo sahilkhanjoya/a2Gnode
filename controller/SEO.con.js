@@ -63,6 +63,13 @@ export const seodelete = async (req, res) => {
 };
 export const updatejobs = async (req, res) => {
     try {
+        const {requiredskills,job_Description, responsibilities} = req.body;
+        const responsibilitiesArray = responsibilities.split('\n').filter(Boolean);
+        const reqSkill = requiredskills.split('\n').filter(Boolean);
+        const des = job_Description.split('\n').filter(Boolean);
+        req.body.responsibilities = responsibilitiesArray
+        req.body.requiredskills = reqSkill
+        req.body.job_Description = des
         const updateNew = await seoJobs.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true })
         if (updateNew == 0) {
             res.status(404).send({ status: false, msg: "data not found", data: {} });
